@@ -1,4 +1,4 @@
-"""DOCSTRING"""
+"""ex04 list practice"""
 
 __author__ = "730753182"
 
@@ -6,6 +6,11 @@ __author__ = "730753182"
 def all(list: list[int], num: int) -> bool:
     """return True/False if all items in a list are equal to num"""
     idx: int = 0
+
+    if len(list) == 0:
+        # False if the user inputs an empty list
+        return False
+
     while idx < len(list):
         if list[idx] != num:
             # we can immediately exit the function and return false if even one
@@ -19,9 +24,9 @@ def all(list: list[int], num: int) -> bool:
 
 def max(list: list[int]) -> int:
     """returns the largest number in a list"""
-    largest_num: int = 0
+    largest_num: int = list[0]
     # using this to store the largest number in
-    idx: int = 0
+    idx: int = 1
 
     if len(list) == 0:
         raise ValueError("max() arg is an empty List")
