@@ -20,14 +20,11 @@ def input_word() -> str:
 def input_letter() -> str:
     letter: str = input("Enter a single character: ")
     # takes the user's input as stores it as the local variable chatacter
-    if len(letter) == 1:  # checks length to make sure it is just a character
-        # print("'" + letter + "'")
-        return letter
-    else:
-        print("Error: Character must be a single chatacter.")
-        # print("'" + letter + "'")
-        # exits the whole function if the user inputs something thats not a single letter
+    if len(letter) != 1:
+        print("Error: Character must be a single character.")
         exit()
+    else:
+        return letter
 
 
 def contains_char(word: str, letter: str) -> None:
@@ -52,10 +49,10 @@ def contains_char(word: str, letter: str) -> None:
         print(letter + " found at index 4")
         count = count + 1
 
-    if count >= 1:
-        print(str(count) + " instance of " + letter + " found in " + word)
-    else:
+    if count == 0:
         print("No instances of " + letter + " found in " + word)
+    else:
+        print(str(count) + " instances of " + letter + " found in " + word)
 
 
 def main() -> None:
