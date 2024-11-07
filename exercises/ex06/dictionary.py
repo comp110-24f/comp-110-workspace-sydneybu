@@ -83,8 +83,8 @@ def alphabetizer(input: list[str]) -> dict[str, list[str]]:
 
 def update_attendance(input: dict[str, list[str]], day: str, student: str) -> None:
     """given an attendance dict of day of the week and present students, add a student to the dict based on the day"""
-    # if they day is already in the attendance, add that student
-    if day in input:
+    # if the day is already in the attendance, add that student
+    if day in input and student not in input[day]:
         input[day].append(student)
     # if the day in not in attendance, make a new key-value pair
     else:

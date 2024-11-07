@@ -42,6 +42,7 @@ def f_range_sum(list: list[float]) -> float:
     if len(list) == 0:
         return 0.0
     # for..in range loop
-    for elem in range(0, len(list)):
-        sum += elem
+    for elem in range(len(list)):
+        sum += list[elem]
+
     return sum
